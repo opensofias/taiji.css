@@ -1,0 +1,157 @@
+<!doctype html>
+<head>
+<style>
+
+
+html {
+	height: 100vh; width: 100vw;
+	font-size: 25vh;
+	display: flex;
+}
+
+@media (orientation:portrait) {
+	html {font-size: 25vw;}
+}
+
+body {
+	margin: 0 0 0 calc(50vw - 50vh);
+	background-color: #808080;
+	height: 4em; width: 4em;
+	border-radius: 2em;
+	overflow: hidden;
+	clip-path: circle(2em)
+}
+
+body > * {
+	position: relative;
+	height: 4em; width: 4em;
+}
+
+#yin {
+	top: 0
+}
+
+#yang {
+	top: -4em;
+}
+
+body > * > * {
+	position: relative;
+
+}
+
+@keyframes headpulse {
+	0% {
+		top: 1em;
+		margin: 0 1em 0 1em;;
+		height: 0; width: 0;
+		z-index: 32;
+	}
+	100% {
+		top: 0;
+		margin: 0 0 -2em 0;
+		height: 2em; width: 2em;
+		z-index: 16;
+	}
+}
+
+@keyframes headcolor {
+	0% {
+		background: #000
+	}
+	49.99% {
+		background: #000
+	}
+	50.01% {
+		background: #fff
+	}
+	100% {
+		background: #fff
+	}
+}
+
+.head {
+	left: 1em;
+	height: 2em;
+	width: 2em;
+	border-radius: 1em ;
+	z-index: 16
+}
+
+.tail {
+	height: 4em;
+	width: 2em;
+	overflow: hidden;
+}
+
+#yin > * {
+	background: #000;
+}
+
+#yang > * {
+	background: #fff;
+}
+
+#yin .head {
+	top: 2em;
+	animation: headcolor 4s linear infinite;
+}
+
+#yang .head {
+	top: 2em;
+	animation: headcolor 4s linear infinite reverse;
+	top: 0em;
+}
+
+#yin .head * {
+	position: relative;
+
+	animation: headpulse 4s linear infinite reverse;
+	background: #fff;
+	border-radius: 100%;
+}
+
+#yang .head * {
+	position: relative;
+	animation: headpulse 4s linear infinite;
+	background: #fff;
+	border-radius: 100%;
+}
+
+#yin .head :nth-child(2) {
+	top: 0;
+	animation-delay: 2s;
+	background: #000;
+}
+
+#yang .head :nth-child(2) {
+	top: 0;
+	animation-delay: 2s;
+	background: #000;
+	
+}
+
+#yin .tail {
+	top: -2em;
+	left: 2em
+}
+
+#yang .tail {
+	left: 0;
+	top: -2em;
+}
+
+</style>
+</head>
+<body>
+	<div id=yin >
+		<div class=head ><div></div><div></div></div>
+			
+		<div class=tail ></div>
+	</div>
+	<div id=yang >
+		
+		<div class=head ><div></div><div></div></div>
+		<div class=tail ></div>
+	</div>
+</body>
