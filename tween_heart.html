@@ -1,0 +1,22 @@
+<!doctype>
+<html><head><style>
+	@keyframes pulsing {
+		0% {d: path('M8,6 q-10,-5 0,4 q8,-8 0,-4 z');}
+		100% {d: path('M8,6 q-8,-4 0,4 q10,-9 0,-4 z');}
+	}
+	body {padding: 0}
+	svg {
+		max-height: 100vh;
+	}
+	path {
+		animation: pulsing 2s alternate-reverse infinite linear;
+		d: path('M10,8 q-8,-4 0,4 q8,-8 0,-4 z');
+
+	}
+</style></head><body>
+<svg viewbox='0 0 16 16'>
+	<path d='M10,8 q-8,-4 0,4 q8,-8 0,-4 z' stroke='#f00' stroke-width='4'/>
+</svg>
+
+
+</body></html>
